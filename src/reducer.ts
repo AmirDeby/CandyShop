@@ -16,7 +16,7 @@ const initialState: IState = {
     customerCoins: 0,
     products: [
         { id: 1, name: "Cola Zero", price: 5, picture: "https://cocacola.co.il/celebratemusic/src/assets/images/cans/zero-empty.png" },
-        // { id: 2, name: "Coffe Cola", price: 5.5, picture: "https://m.pricez.co.il/ProductPictures/200x/7290110112257.jpg" }
+        { id: 2, name: "Zero Cola", price: 5, picture: "https://cocacola.co.il/celebratemusic/src/assets/images/cans/zero-empty.png" }
     ]
 }
 

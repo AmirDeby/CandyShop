@@ -6,7 +6,7 @@ import { Product } from '../Product/Product';
 
 export interface ICellProps {
     customerCoins: number,
-    
+
 }
 
 interface ICellState {
@@ -21,13 +21,8 @@ class _Cell extends React.Component<ICellProps, ICellState> {
     public render() {
         const { customerCoins } = this.props
         return (
-            <div style={{ border: "solid black", width: "200px", height: "260px", padding: "7px", margin: "10px", float: "left", marginBottom: "17px" }}>
-                <div>
-                    <div>
-                        <Product />
-                    </div>
-                </div>
-               
+            <div>
+                <Product />
             </div>
         );
     }

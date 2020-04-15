@@ -19,14 +19,16 @@ class _CoinSlot extends React.Component<ICoinSlotProps, ICoinSlotState> {
     public render() {
         const { inisitalBalance } = this.state
         return (
-            <div style={{ border: "solid black 2px", margin: "10px", height: "260px"}}>
+            <div style={{ border: "solid black 2px", margin: "10px", height: "240px"}}>
                 <h4 style={{ margin: "10px 10px" }}><u>Amount</u></h4>
                 <div>
                     <b> {inisitalBalance}</b>
                 </div>
                 <Button onClick={this.onClickFiveHandler} style={{ margin: "10px" }} size="sm">5 NIS</Button>
                 <Button onClick={this.onClickTenHandler} style={{ margin: "10px" }} size="sm">10 NIS</Button>
-                <Button onClick={this.onClickRegretHandler} style={{ margin: "10px" }} size="sm" variant="danger">Coins Out</Button>
+                <div>
+                    <Button onClick={this.onClickRegretHandler} style={{ margin: "10px" }} size="sm" variant="danger">Coins Out</Button>
+                </div>
                 <div style={{ margin: "12px" }}>
                     <Button onClick={this.onSendMonenyHandler} size="sm" variant="outline-success">Send Money</Button>
                 </div>

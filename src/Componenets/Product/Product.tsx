@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { customerCoinsAction, removeItemAction } from '../../actions';
 import { IProduct } from '../../ProductMudole';
 import { IState } from '../../reducer';
+import "../Product/Product.css";
+
 
 export interface IProductProps {
   products?: IProduct[],
@@ -12,22 +14,22 @@ export interface IProductProps {
   removeItem(id: number): void,
 }
 
-
 class _Product extends React.Component<IProductProps> {
-
   public render() {
     const { products, customerCoins } = this.props
     return (
       <div>
         {products.map(product =>
-          <div key={product.id}>
+          <div className="product-div" key={product.id}>
             <img style={{ width: "40px" }} src={product.picture} />
             <p>{product.name}</p>
             <p>Price : {product.price}</p>
             <Button size="sm" onClick={this.isBuying} variant="secondary">Buy</Button>
           </div>
         )}
-        <p style={{ margin: "17px 15px" }}>You have {customerCoins} NIS</p>
+        <p style={{textDecoration:"bold"}}>
+          <u><b>You have {customerCoins} NIS</b></u>
+        </p>
       </div>
     );
   }

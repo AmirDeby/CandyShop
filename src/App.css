@@ -3,6 +3,11 @@
   float: left;
   margin-left: 270px;
 }
+.container{
+  flex-wrap: nowrap;
+   display: flex;
+}
+
 body{
   background-color: #ffffff;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='1.8' stroke-opacity='0.73'%3E%3Crect fill='%23f5e8cf' x='-60' y='-60' width='103' height='240'/%3E%3C/g%3E%3C/svg%3E");

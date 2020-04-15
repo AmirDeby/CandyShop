@@ -10,15 +10,18 @@ const App: React.FC = () => {
       <div className="w3-container w3-tangerine">
         <p className="w3-jumbo" style={{ margin: 'auto', marginBottom: "10px" }}><u><b>My Vending Machine</b></u></p>
       </div>
-      <Cell />
-      <div>
-        <CoinSlot />
-      </div>
-      <div>
-        <Display />
+      <div className="container">
+        <div>
+          <Cell />
+          <Display />
+        </div>
+        <div style={{ float: "left" }}>
+          <CoinSlot />
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default App;
