@@ -5,6 +5,7 @@ import { customerCoinsAction, removeItemAction } from '../../actions';
 import { IProduct } from '../../ProductMudole';
 import { IState } from '../../reducer';
 import "../Product/Product.css";
+import { ProductItem } from '../ProductItem/ProductItem';
 
 
 export interface IProductProps {
@@ -19,27 +20,16 @@ class _Product extends React.Component<IProductProps> {
     const { products, customerCoins } = this.props
     return (
       <div>
-        {products.map(product =>
-          <div className="product-div" key={product.id}>
-            <img style={{ width: "40px" }} src={product.picture} />
-            <p>{product.name}</p>
-            <p>Price : {product.price}</p>
-            <Button size="sm" onClick={this.isBuying} variant="secondary">Buy</Button>
+        {products.map((product) =>
+          <div key={product.id}>
+            <ProductItem product={product} />
           </div>
         )}
-        <p style={{textDecoration:"bold"}}>
+        <p style={{ textDecoration: "bold" }}>
           <u><b>You have {customerCoins} NIS</b></u>
         </p>
       </div>
     );
-  }
-  isBuying = () => {
-    const { customerCoins, updateCustomerCoins, removeItem } = this.props;
-
-    if (customerCoins >= 5) {
-      const currentCoins = customerCoins - 5
-      updateCustomerCoins(currentCoins);
-    }
   }
 }
 

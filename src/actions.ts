@@ -1,9 +1,9 @@
 import { ActionType } from "./reducer"
 
 export const removeItemAction = (id: number) => {
-    console.log(id);
+    // console.log(id);
     return {
-        type: ActionType.GetProducts,
+        type: ActionType.RemoveItem,
         payload: id
     }
 }

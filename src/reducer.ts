@@ -37,10 +37,15 @@ export const reducer = (state = initialState, action: IAction) => {
 
         case ActionType.RemoveItem: {
             const itemId = action.payload; 
-
+            const products = state.products.concat();
+            const productIndex = products.findIndex(product => product.id === itemId);
+            products.splice(productIndex, 1)
+            // console.log(products);
+            // console.log(productIndex);
+            // console.log(currentProducts);
             return {
                 ...state,
-                // products: , 
+                products, 
             }
         }
 
