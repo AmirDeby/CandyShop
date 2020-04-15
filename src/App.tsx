@@ -11,8 +11,6 @@ const App: React.FC = () => {
         <p className="w3-jumbo" style={{ margin: 'auto', marginBottom: "10px" }}><u><b>My Vending Machine</b></u></p>
       </div>
       <Cell />
-      <Cell />
-      <Cell />
       <div>
         <CoinSlot />
       </div>

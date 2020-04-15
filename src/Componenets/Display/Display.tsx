@@ -21,8 +21,8 @@ class _Display extends React.Component<IDisplayProps, IDisplayState> {
   public render() {
     const { customerCoins } = this.props
     return (
-      <div style={{ margin: "10px" }}>
-        {customerCoins ? <Alert variant="success">You Can pick a Product</Alert> : <Alert variant="warning"><b>Not Enough Money</b></Alert>}
+      <div style={{ margin: "39px" }}>
+        {customerCoins ? <Alert variant="success">You Can pick a Product</Alert> : <Alert variant="info"><b>Not Enough Money</b></Alert>}
       </div>
     );
   }
