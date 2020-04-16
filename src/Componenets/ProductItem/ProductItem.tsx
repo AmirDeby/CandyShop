@@ -28,12 +28,14 @@ class _ProductItem extends React.Component<IProductItemProps> {
     }
     isBuying = () => {
         const { customerCoins, updateCustomerCoins, removeItem } = this.props;
-        const { id } = this.props.product
+        const { id, price } = this.props.product
 
-        if (customerCoins >= 5) {
-            const currentCoins = customerCoins - 5
+        if (customerCoins >= price) {
+            const currentCoins = customerCoins - price
             removeItem(id);
             updateCustomerCoins(currentCoins);
+        } else {
+            alert('you do Not Enough Money')
         }
     }
 }

@@ -19,7 +19,7 @@ class _CoinSlot extends React.Component<ICoinSlotProps, ICoinSlotState> {
     public render() {
         const { inisitalBalance } = this.state
         return (
-            <div style={{ border: "solid black 2px", margin: "10px", height: "240px"}}>
+            <div style={{ border: "solid black 2px", margin: "10px", height: "240px", display:"inline-table"}}>
                 <h4 style={{ margin: "10px 10px" }}><u>Amount</u></h4>
                 <div>
                     <b> {inisitalBalance}</b>

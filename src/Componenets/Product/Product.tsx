@@ -16,17 +16,18 @@ export interface IProductProps {
 }
 
 class _Product extends React.Component<IProductProps> {
+
   public render() {
-    const { products, customerCoins } = this.props
+    const { products, customerCoins } = this.props;
     return (
-      <div>
+      <div >
         {products.map((product) =>
-          <div key={product.id}>
-            <ProductItem product={product} />
-          </div>
+          <div style={{ float: "left" }} key={product.id}>
+              <ProductItem product={product} />
+            </div>
         )}
         <p style={{ textDecoration: "bold" }}>
-          <u><b>You have {customerCoins} NIS</b></u>
+          <u><b>You have Left : {customerCoins} NIS</b></u>
         </p>
       </div>
     );

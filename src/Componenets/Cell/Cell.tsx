@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { customerCoinsAction, removeItemAction } from '../../actions';
 import { IState } from '../../reducer';
 import { Product } from '../Product/Product';
+import { IProduct } from '../../ProductMudole';
 
 export interface ICellProps {
     customerCoins: number,
-
+    products: IProduct[],
 }
 
 interface ICellState {
@@ -19,7 +20,7 @@ class _Cell extends React.Component<ICellProps, ICellState> {
     }
 
     public render() {
-        const { customerCoins } = this.props
+        const { products } = this.props;
         return (
             <div>
                 <Product />
