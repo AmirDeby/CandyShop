@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
 import { customerCoinsAction, removeItemAction } from '../../actions';
 import { IProduct } from '../../ProductMudole';

@@ -7,22 +7,12 @@ export interface IDisplayProps {
   customerCoins: number,
 }
 
-interface IDisplayState {
-  buy: boolean,
-}
-
-class _Display extends React.Component<IDisplayProps, IDisplayState> {
-  state = {
-    buy: false,
-  }
-
-
-
+class _Display extends React.Component<IDisplayProps> {
   public render() {
     const { customerCoins } = this.props
     return (
-      <div style={{ margin: "20px" , display:"flex" }}>
-        {customerCoins ? <Alert variant="success">You Can pick a Product</Alert> : <Alert variant="info"><b>Not Enough Money</b></Alert>}
+      <div style={{ margin: "10px"}}>
+        {customerCoins ? <Alert variant="success"><b>You Can pick a Product</b></Alert> : <Alert variant="danger"><b>Not Enough Money</b></Alert>}
       </div>
     );
   }

@@ -18,7 +18,7 @@ class _ProductItem extends React.Component<IProductItemProps> {
         return (
             <div>
                 <div className="product-div" key={id}>
-                    <img style={{ width: "40px" }} src={picture} />
+                    <img alt="" style={{ width: "47px" }} src={picture} />
                     <p>{name}</p>
                     <p>Price : {price}</p>
                     <Button size="sm" onClick={this.isBuying} variant="secondary">Buy</Button>
