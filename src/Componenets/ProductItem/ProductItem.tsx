@@ -12,6 +12,7 @@ export interface IProductItemProps {
     removeItem?(id: number): void,
 }
 
+
 class _ProductItem extends React.Component<IProductItemProps> {
     public render() {
         const { id, name, picture, price } = this.props.product;
@@ -35,7 +36,7 @@ class _ProductItem extends React.Component<IProductItemProps> {
             removeItem(id);
             updateCustomerCoins(currentCoins);
         } else {
-            alert('you do Not Enough Money')
+            alert('you do not have Enough Money')
         }
     }
 }

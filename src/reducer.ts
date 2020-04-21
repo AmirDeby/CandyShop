@@ -1,39 +1,75 @@
 import { IProduct } from "./ProductMudole";
+import { IAprrovedCreditCard } from "./cardModule";
 
 export interface IState {
     customerCoins: number,
     products: IProduct[],
+    isLoading: boolean,
+    aprrovedCreditCardNumbers: IAprrovedCreditCard[],
+    aprroved: boolean,
 }
 
 export interface IAction {
     type: string;
     payload: any;
-
 }
 
 
 const initialState: IState = {
     customerCoins: 0,
-    products: [
-        { id: 1, name: "Cola Zero", price: 5, picture: "https://cocacola.co.il/celebratemusic/src/assets/images/cans/zero-empty.png" },
-        // { id: 2, name: "Zero Cola", price: 5.5, picture: "https://cocacola.co.il/celebratemusic/src/assets/images/cans/zero-empty.png" },
-        { id: 4, name: "Coffee Zero", price: 3.5, picture: "https://cbcsales.co.il/wp-content/uploads/2019/09/7290110112264-500x700.png" },
-        { id: 3, name: "Coffee Zero", price: 3.5, picture: "https://cocacola.co.il/img/products/cocacola/cola-zero/gallery/zero-11.jpg" },
-    ]
+    products: [],
+    isLoading: false,
+    aprrovedCreditCardNumbers: [
+        { number: "4580101320", amount: 50 },
+        { number: "4580101321", amount: 20 },
+        { number: "4580101322", amount: 100 },
+        { number: "4580101323", amount: 35 },
+    ],
+    aprroved: false
 }
 
 export enum ActionType {
     CustomerCoins = "CUSTOMER_COINS",
     GetProducts = "GET_PRODUCTS",
-    RemoveItem = "REMOVE_ITEM"
+    RemoveItem = "REMOVE_ITEM",
+    GetProductsSuccess = "GET_PRODUCTS_SUCCESS",
+    GetProductsPending = "GET_PRODUCTS_PENDING",
+    GetProductsFail = "GET_PRODUCTS_FAIL",
+    CheckSuccess = "CHECK_SUCCES",
+    CheckedFail = "CHECKED_FAIL",
 }
 
 export const reducer = (state = initialState, action: IAction) => {
     switch (action.type) {
 
-        case ActionType.GetProducts: {
+        case ActionType.CheckSuccess: {
             return {
                 ...state,
+                aprroved: true,
+                customerCoins: action.payload
+            }
+        }
+
+        case ActionType.GetProductsFail: {
+            return {
+                ...state,
+                isLoading: false,
+                products: []
+            }
+        }
+
+        case ActionType.GetProductsPending: {
+            return {
+                ...state,
+                isLoading: true
+            }
+        }
+
+        case ActionType.GetProductsSuccess: {
+            return {
+                ...state,
+                isLoading: false,
+                products: action.payload
             }
         }
 
@@ -42,9 +78,7 @@ export const reducer = (state = initialState, action: IAction) => {
             const products = state.products.concat();
             const productIndex = products.findIndex(product => product.id === itemId);
             products.splice(productIndex, 1)
-            // console.log(products);
-            // console.log(productIndex);
-            // console.log(currentProducts);
+
             return {
                 ...state,
                 products,
